@@ -1,0 +1,9 @@
+.langit-bg {
+  background: linear-gradient(180deg,
+    #1565c0 0%,
+    #1976d2 25%,
+    #42a5f5 60%,
+    #90caf9 85%,
+    #e3f2fd 100%
+  );
+}

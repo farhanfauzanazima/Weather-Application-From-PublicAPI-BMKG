@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+* { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+body {
+  background: linear-gradient(135deg, #0f4c81 0%, #1a6fa8 40%, #0d8a6b 100%);
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.app-title { font-size: 2rem; font-weight: 700; color: #fff; letter-spacing: -0.5px; }
+.app-subtitle { color: rgba(255,255,255,0.75); font-size: 0.95rem; }
+.bmkg-logo { font-size: 3rem; }
+
+/* ===== SEARCH CARD ===== */
+.search-card {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 16px;
+  color: #fff;
+}
+.search-card .form-label {
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.search-card .form-select {
+  background-color: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.search-card .form-select:focus {
+  background-color: rgba(255,255,255,0.22);
+  border-color: rgba(255,255,255,0.6);
+  color: #fff;
+  box-shadow: none;
+}
+.search-card .form-select:disabled {
+  background-color: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.35);
+  cursor: not-allowed;
+}
+.search-card .form-select option {
+  background: #1a6fa8;
+  color: #fff;
+}
+
+.btn-cari {
+  background: #fff;
+  color: #0f4c81;
+  font-weight: 600;
+  border: none;
+  padding: 0.65rem;
+  border-radius: 10px;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+}
+.btn-cari:hover {
+  background: #e8f4ff;
+  color: #0a3d6b;
+  transform: translateY(-1px);
+}
+.btn-cari:disabled {
+  background: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.5);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== DROPDOWN LOADING ===== */
+.dropdown-loading {
+  margin-top: 10px;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+}
+.dropdown-loading .spinner-border {
+  color: rgba(255,255,255,0.8);
+}
+
+/* ===== LOKASI CARD ===== */
+.lokasi-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  color: #fff;
+}
+.lokasi-label { font-size: 0.78rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; }
+.lokasi-nama { font-size: 1.1rem; font-weight: 600; color: #fff; }
+.koordinat { font-size: 0.82rem; color: rgba(255,255,255,0.65); font-family: monospace; }
+
+/* ===== HARI HEADER ===== */
+.hari-header {
+  color: rgba(255,255,255,0.9);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+  border-left: 3px solid rgba(255,255,255,0.5);
+  padding-left: 10px;
+}
+
+/* ===== CUACA CARD ===== */
+.cuaca-card {
+  background: rgba(255,255,255,0.95);
+  border-radius: 16px;
+  padding: 1.2rem;
+  height: 100%;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(255,255,255,0.3);
+  position: relative;
+  overflow: hidden;
+}
+.cuaca-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1a6fa8, #0d8a6b);
+  border-radius: 16px 16px 0 0;
+}
+.cuaca-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.2); }
+.cuaca-card.cerah::before  { background: linear-gradient(90deg, #f7b733, #fc4a1a); }
+.cuaca-card.berawan::before { background: linear-gradient(90deg, #6b8cba, #8aa4c8); }
+.cuaca-card.hujan::before  { background: linear-gradient(90deg, #2196F3, #00BCD4); }
+.cuaca-card.badai::before  { background: linear-gradient(90deg, #4a148c, #7b1fa2); }
+
+.waktu-badge {
+  display: inline-block;
+  background: #f0f7ff;
+  color: #1a6fa8;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 0.75rem;
+}
+.cuaca-icon-fallback { font-size: 2.5rem; margin-bottom: 0.5rem; display: block; }
+.cuaca-desc { font-size: 0.85rem; font-weight: 600; color: #1a3d5c; margin-bottom: 0.8rem; min-height: 2em; }
+.suhu-utama { font-size: 2.2rem; font-weight: 700; color: #0f4c81; line-height: 1; margin-bottom: 0.75rem; }
+.suhu-utama span { font-size: 1rem; font-weight: 400; color: #6b8cba; }
+
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.info-item { background: #f5f9ff; border-radius: 8px; padding: 6px 8px; }
+.info-item .info-label { font-size: 0.65rem; color: #8aa5be; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1px; }
+.info-item .info-value { font-size: 0.82rem; font-weight: 600; color: #1a3d5c; }
+
+/* ===== LOADING & ERROR ===== */
+.loading-section { text-align: center; padding: 3rem 0; color: rgba(255,255,255,0.8); }
+.loading-text { margin-top: 1rem; font-size: 0.9rem; }
+.error-card {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,100,100,0.4);
+  border-radius: 16px;
+  padding: 2rem;
+  color: #fff;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  .app-title { font-size: 1.5rem; }
+  .suhu-utama { font-size: 1.8rem; }
+}
